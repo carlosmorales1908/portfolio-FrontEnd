@@ -1,0 +1,37 @@
+
+<app-about-me [persona]="persona"></app-about-me>
+<div class="contenedor">
+    <div class="tab">
+        <input type="checkbox" name="acc" id="acc1">
+        <label for="acc1"><h1 id="experiencia">Experiencia Laboral</h1></label>
+        <div class="contenido">
+            <app-experience [listaExperiencias]="persona.listaExperiencias_laborales" ></app-experience>
+        </div>
+    </div>
+
+    <div class="tab">
+        <input type="checkbox" name="acc" id="acc2">
+        <label for="acc2"><h1>Educación</h1></label>
+        <div class="contenido">
+            <app-education [listaEstudios]="persona.listaEducaciones" id="educacion"></app-education>
+        </div>
+    </div>
+
+    <div class="tab">
+        <input type="checkbox" name="acc" id="acc3">
+        <label for="acc3"><h1 id="habilidades">Habilidades</h1></label>
+        <div class="contenido">
+            <app-skill ></app-skill>
+        </div>
+    </div>
+
+    <div class="tab">
+        <input type="checkbox" name="acc" id="acc4">
+        <label for="acc4"><h1 id="proyectos">Proyectos Realizados</h1></label>
+        <div class="contenido">
+            <app-proyect [listaProyectos]="persona.listaProyectos" ></app-proyect>
+        </div>
+    </div>
+   
+</div>
+

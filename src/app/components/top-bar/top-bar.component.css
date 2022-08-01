@@ -1,0 +1,93 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.redes{
+    margin-right: 0.5em;
+}
+.btn{
+    border-width: medium;
+    margin: 0.4em;
+    margin-left: 20px;
+}
+#logoAP{
+    width:150px;
+}
+
+img{
+    width:50px;
+}
+
+.redes img{
+    width: 35px;
+    filter: invert(100%);
+}
+
+
+.btn:hover{
+    color: orange;
+    background-color:#252525;
+    border-color: orange;
+}
+
+.nav{
+    position:absolute;
+    right: 30%;
+}
+.nav-list a{ 
+    font-size: 17px;
+    font-weight: bold;
+    padding: 7px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+}
+
+.nav-list a:hover{
+    font-size: 18px;
+    color: orange;
+    transition: all .2s ease-in-out;
+}
+
+
+.nav-list li{
+    margin-top: 18px;
+    display: inline-block;
+    position: relative;
+}
+
+/* ICONS */
+.icon{
+    padding: 4px;
+}
+
+.redes img:hover{
+    width: 40px;
+    margin: 10px;
+    filter: invert(64%) sepia(22%) saturate(1879%) hue-rotate(358deg) brightness(100%) contrast(110%);
+    transition: all .2s ease-in-out;
+}
+
+::selection{
+    background-color: rgba(255, 255, 255, 0.0);
+    color: orange;
+}
+
+
+
+/*Para la vista de celular*/
+@media (max-width:575px){
+    .container{
+        flex-direction: column;     /*Para que se ponga uno debajo del otro en columna*/
+    }
+    .redes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .redes img{
+        margin: 0.2em;
+    }
+}

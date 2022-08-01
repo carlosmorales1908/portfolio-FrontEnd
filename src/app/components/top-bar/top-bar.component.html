@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="container">
+        <div class="logoAP">
+            <img src="../../../assets/img/APLogo.png" alt="" id="logoAP">
+        </div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li><a href="#experiencia">Experiencia laboral</a></li>
+                <li><a href="#educacion">Educacion</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+ <!--               <li><a href="#proyectos" (click)="dirProyectos()">Proyectos</a></li> -->
+                <li><a href="#footer">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="redes">
+            <a href="" class="icon"><img src="../../../assets/icons/linkedin-in-brands.svg" alt=""></a>
+            <a href="" class="icon"><img src="../../../assets/icons/twitter-brands.svg" alt=""></a>
+            <a href="" class="icon"><img src="../../../assets/icons/instagram-brands.svg" alt=""></a>
+            <a href="" class="icon"><img src="../../../assets/icons/github-brands.svg" alt=""></a>
+            <a href="https://facebook.com/dificil.deencontrar.14" class="icon"><img src="../../../assets/icons/facebook-brands.svg" alt=""></a>
+            <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Ingreso</button>
+            <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Cerrar Session</button>
+        </div>
+    </div>
+</div>
+
+

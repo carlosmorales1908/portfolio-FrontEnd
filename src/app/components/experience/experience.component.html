@@ -1,0 +1,15 @@
+<h1>Experiencia Laboral</h1>
+<div class="row">
+    
+    <div class="col-lg-1"></div>    <!--agrego una columna vacia para que el div siguien tenga una columna de margen -->
+    <div class="col-lg-11">     <!--11 para que me ocupe 11 de las 12 columnas -->
+        <ul>
+            <li *ngFor="let experiencia of listaExperiencias">
+                <h2>{{experiencia.empresa}}</h2>
+                    <h5>({{experiencia.fechaInicio | date: "dd/MM/yyyy"}} - {{experiencia.fechaFin | date: "dd/MM/yyyy"}})</h5>
+                <p>{{experiencia.descripcion}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+

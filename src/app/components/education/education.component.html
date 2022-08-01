@@ -1,0 +1,16 @@
+<h1>Educación</h1>
+<div class="row">
+    
+    <div class="col-lg-1"></div>    <!--agrego una columna vacia para que el div siguiente tenga una columna de margen -->
+    <div class="col-lg-11">     <!--11 para que me ocupe 11 de las 12 columnas -->
+        <ul>
+            <li *ngFor="let educacion of listaEstudios">
+                <h2>{{educacion.institucion}}</h2> 
+                <h4>Título: {{educacion.titulo}}</h4>
+                <p *ngIf="educacion.anioFinalizado"> - {{educacion.anioFinalizado}}</p>  
+                <p *ngIf="educacion.enCurso">Actualmente en curso</p>
+                <p *ngIf="educacion.finalizado">Finalizado</p>
+            </li>
+        </ul>
+    </div>
+</div>
