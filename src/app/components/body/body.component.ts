@@ -16,18 +16,4 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void {   
     
   }
-
-  
-  /*
- 
-  persona: persona = new persona("","","","","","",[],[],[],[]);
-
-
-  constructor(public personaService:PersonaService) { }
-
-  ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => {this.persona = data})
-   
-  }
-  */
 }

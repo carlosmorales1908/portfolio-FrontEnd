@@ -2,3 +2,10 @@ img{
     width: 100%;
     height: 350px;
 }
+
+/*Para la vista de celular*/
+@media (max-width:575px){
+    img{
+        height: 250px;
+    }
+}

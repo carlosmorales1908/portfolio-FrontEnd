@@ -17,40 +17,57 @@ p, h1{
 }
 
 
+
+#fotoPerfil{
+    position: absolute;
+    width: 15%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px black;
+    left: 3%;
+    top: 470px;
+}
+
+::selection{
+    background-color: rgba(255, 255, 255, 0.0);
+    color: orange;
+}
+
+
+
+/*      VISTAS      */
 @media(min-width: 576px){
     #fotoPerfil{
         position: absolute;
         width: 15%;
-        border-radius: 100%;
         box-shadow: 3px 3px 3px black;
         left: 3%;
         top: 340px;
     }
 }
 
+
+
 @media(max-width: 575px){
     #fotoPerfil{
         position: absolute;
-        width: 30%;
-        border-radius: 100%;
+        width: 55%;
         box-shadow: 3px 3px 3px black;
-        left: 35%;
-        top: 670px;
+        left: 22%;
+        top: 230px;
     }
 }
 
+/*          MONITOR DE 22" o más     */
 @media(min-width: 1480px){  
     #fotoPerfil{
         position: absolute;
         width: 15%;
-        border-radius: 100%;
         box-shadow: 3px 3px 3px black;
         left: 3%;
-        top: 470px;
+        top: 190px;
     }
-}
-
-::selection{
-    background-color: rgba(255, 255, 255, 0.0);
-    color: orange;
+    #nombre{
+        margin-top:5%
+    }
+    
 }

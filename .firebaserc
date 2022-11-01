@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "portfolio-frontend-aed6f"
-  }
+    "default": "portfolio-frontend-aed6f",
+    "portfolio3615": "frontend-portfolio3615",
+    "portfolio-frontend": "portfolio-frontend-aed6f"
+  },
+  "targets": {},
+  "etags": {}
 }

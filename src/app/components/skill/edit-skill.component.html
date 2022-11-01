@@ -1,0 +1,38 @@
+<div class="ppal">
+    <h3>Editar Habilidad</h3>
+    <div class="container">
+        <div class="row">
+            <div>
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                    <div class="form-group">
+                        <label for="nombreSkill">Nombre de la habilidad:</label>
+                        <input type="text" class="form-control" id="nombreSkill" name="nombreSkill" [(ngModel)]="skill.nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mesesSkill">Tiempo (cantidad de meses):</label>
+                        <input type="number" class="form-control" id="mesesSkill" name="mesesSkill" [(ngModel)]="skill.meses" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="porcentajeSkill">Porcentaje:</label>
+                        <input type="number" class="form-control" id="porcentajeSkill" name="porcentajeSkill" [(ngModel)]="skill.porcentaje" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="colorCirculoSkill">Color del circulo (en hexadecimal):</label>
+                        <input type="text" class="form-control" id="colorCirculoSkill" name="colorCirculoSkill" [(ngModel)]="skill.colorCirculo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="colorPorcentajeSkill">Color de la barra de porcentaje (en hexadecimal):</label>
+                        <input type="text" class="form-control" id="colorPorcentajeSkill" name="colorPorcentajeSkill" [(ngModel)]="skill.colorPorcentaje" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="url_imgSkill">Link de la imagen:</label>
+                        <input type="text" class="form-control" id="url_imgSkill" name="url_imgSkill" [(ngModel)]="skill.url_img" required>
+                    </div>
+                    <button class="btn btn-warning btnAdd">Actualizar habilidad</button>
+                </form>
+                <button class="btn btn-danger btnCancel" routerLink="/">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

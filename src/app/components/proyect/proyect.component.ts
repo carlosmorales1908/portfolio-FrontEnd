@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { persona } from 'src/app/model/persona.model';
+import { Component, OnInit } from '@angular/core';
 import { proyecto } from 'src/app/model/proyecto.model';
-import { PersonaService } from 'src/app/service/persona.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-proyect',
@@ -10,23 +9,38 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./proyect.component.css']
 })
 export class ProyectComponent implements OnInit {
-  /* 
-  listaProyectos: proyecto[]  = new Array<proyecto>();
-  proyecto: proyecto = new proyecto("","","","");
 
-  constructor(public proyectoService: ProyectoService) { }
+  proyectos: proyecto[] = [];
 
-  ngOnInit(): void {
-    this.proyectoService.getProyecto().subscribe(data => {this.proyecto = data})
-  }
-  */
-
-  @Input() listaProyectos!: proyecto[];
-
-  constructor() { }
+  constructor(private sProyecto: ProyectoService, private tokenService: TokenService) { }
+  isLogged = false;
 
   ngOnInit(): void {
-    
+    this.cargarProyectos();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
+  cargarProyectos(): void{
+    this.sProyecto.lista().subscribe(
+      data => {
+        this.proyectos = data;
+      }
+    )
+  }
+
+  borrarProyecto(id?:number){
+    if(id != undefined){
+      this.sProyecto.delete(id).subscribe(
+        data => {
+          this.cargarProyectos();
+        }, err => {
+          alert("No se pudo eliminar el proyecto.");
+        }
+      )
+    }
+  }
 }

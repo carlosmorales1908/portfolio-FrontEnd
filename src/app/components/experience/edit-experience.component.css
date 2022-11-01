@@ -1,0 +1,25 @@
+h3{
+    margin-top:3%;
+    text-align: center;
+}
+
+.container{
+    margin-top: 3%;
+}
+
+.form-group{
+    margin: 1%;
+}
+
+.btnAdd{
+    margin: 2%;
+    position: absolute;
+    right: 15%;
+}
+
+.btnCancel{
+    margin: 2%;
+    position: absolute;
+    right: 8%;
+}
+

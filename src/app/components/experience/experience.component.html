@@ -1,15 +1,27 @@
 <h1>Experiencia Laboral</h1>
+<div class="newExp">
+    <button type="button" class="btn btn-primary" routerLink="/nuevaExperiencia" *ngIf="isLogged">Agregar Experiencia</button>
+</div>
+
 <div class="row">
-    
     <div class="col-lg-1"></div>    <!--agrego una columna vacia para que el div siguien tenga una columna de margen -->
     <div class="col-lg-11">     <!--11 para que me ocupe 11 de las 12 columnas -->
         <ul>
-            <li *ngFor="let experiencia of listaExperiencias">
-                <h2>{{experiencia.empresa}}</h2>
-                    <h5>({{experiencia.fechaInicio | date: "dd/MM/yyyy"}} - {{experiencia.fechaFin | date: "dd/MM/yyyy"}})</h5>
+            <li *ngFor="let experiencia of experiencias">
+                <h2>{{experiencia.puesto}}</h2>
+                <h4>{{experiencia.empresa}}</h4>
+                <h5 *ngIf="experiencia.esActual">({{experiencia.fechaInicio | date: "dd/MM/yyyy"}} - Acualidad)</h5> 
+                <h5 *ngIf="!experiencia.esActual">({{experiencia.fechaInicio | date: "dd/MM/yyyy"}} - {{experiencia.fechaFin | date: "dd/MM/yyyy"}})</h5>
                 <p>{{experiencia.descripcion}}</p>
+                <div class="opciones" *ngIf="isLogged">
+                    <button class="btn btn-warning btnEdit" routerLink="/editarExperiencia/{{experiencia.id}}">
+                        <i class="bi bi-pencil"></i> Editar
+                    </button>
+                    <button class="btn btn-danger" (click)="borrarExperiencia(experiencia.id)">
+                        <i class="bi bi-trash"></i> Eliminar
+                    </button>
+                </div>
             </li>
         </ul>
     </div>
 </div>
-

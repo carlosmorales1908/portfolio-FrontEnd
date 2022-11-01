@@ -7,13 +7,28 @@ import { proyecto } from '../model/proyecto.model';
   providedIn: 'root'
 })
 
-
 export class ProyectoService {
-  URL = 'http://api-portfolio3615.herokuapp.com/proyecto';
+  URL = 'https://api-portfolio3615.herokuapp.com/proyecto/';
 
-  constructor(private http:HttpClient) { }
-  
-  public getProyecto(): Observable<proyecto> {
-    return this.http.get<proyecto>(this.URL + '/ver/1');
+  constructor(private httpClient: HttpClient) { }
+
+  public lista(): Observable<proyecto[]>{
+    return this.httpClient.get<proyecto[]>(this.URL + 'ver/todos');
+  }
+
+  public detalle(id: number): Observable<proyecto>{
+    return this.httpClient.get<proyecto>(this.URL + `ver/${id}`);
+  }
+
+  public save(proyecto: proyecto): Observable<any>{
+    return this.httpClient.post<any>(this.URL + 'new', proyecto);
+  }
+
+  public update(id: number, proyecto: proyecto): Observable<any>{
+    return this.httpClient.put<any>(this.URL + `modificar/${id}`, proyecto);
+  }
+
+  public delete(id: number): Observable<any>{
+    return this.httpClient.delete<any>(this.URL + `eliminar/${id}`);
   }
 }

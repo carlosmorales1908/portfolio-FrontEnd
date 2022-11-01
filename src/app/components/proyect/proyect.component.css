@@ -43,7 +43,6 @@ img{
     border-radius: 18px;
 }
 
-
 .img-proyect:hover{
     height: 207px;
     width: 307px;
@@ -51,7 +50,69 @@ img{
     transition: all .3s ease-in-out;
 }
 
+.newProy{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.btnEdit{
+    margin-right: 10px;
+}
+
+.opciones{
+    margin-top: 20px;
+    margin-left: 100px;;
+}
+
 ::selection{
     background-color: rgba(255, 255, 255, 0.0);
     color: orange;
+}
+
+
+/*          VISTAS          */
+
+/*MONITOR DE 22" o más*/
+@media(min-width: 1480px){  
+    .img-proyect{
+        height: 270px;
+        width: 370px;
+        box-shadow: 10px 10px 20px black; 
+        /*         ejeX  ejeY difuminacion color*/
+        transition: all .3s linear;
+    }
+    .img-proyect:hover{
+        height: 290px;
+        width: 390px;
+        box-shadow: 10px 10px 20px orange;
+        transition: all .3s ease-in-out;
+    }
+}
+
+/* CELULAR */
+@media(max-width: 575px){
+    li{
+        padding: 0px;
+        margin: 40px 0px 20px;
+    }
+    h2{
+        text-align: center;
+    }
+    .description{
+        padding: 0px;
+    }
+    .description p{
+        text-align: center;
+    }
+    .img-proyect{
+        height: 200px;
+        width: 300px;
+        box-shadow: 10px 10px 20px black;
+    }
+    .img-proyect:hover{
+        box-shadow: 10px 10px 20px orange;
+    }
+    .imgproject{
+        margin-bottom: 20px;
+    }
 }

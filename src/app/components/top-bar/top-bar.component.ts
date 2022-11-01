@@ -32,12 +32,4 @@ export class TopBarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  /*
-  dirProyectos(){
-    console.log("entra");
-    this.seccionProyectos = true;
-    console.log(this.seccionProyectos)
-  }
-  */
-  
 }

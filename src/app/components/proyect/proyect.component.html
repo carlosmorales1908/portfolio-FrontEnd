@@ -1,7 +1,10 @@
 <h1>Proyectos Realizados</h1>
+<div class="newProy">
+    <button type="button" class="btn btn-primary" routerLink="/nuevoProyecto" *ngIf="isLogged">Agregar Proyecto</button>
+</div>
 <div class="row">
     <ul>
-        <li *ngFor="let proyecto of listaProyectos">
+        <li *ngFor="let proyecto of proyectos">
             <div class="contenedor">
                 <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte1">
                     <a href="{{proyecto.link}}"><img src="{{proyecto.url_img}}" alt="" class="img-fluid img-proyect"></a>
@@ -11,6 +14,15 @@
                     <p>{{proyecto.descripcion}}</p>
                 </div>
             </div>
+            <div class="opciones" *ngIf="isLogged">
+                <button class="btn btn-warning btnEdit" routerLink="editarProyecto/{{proyecto.id}}">
+                    <i class="bi bi-pencil"></i> Editar
+                </button>
+                <button class="btn btn-danger" (click)="borrarProyecto(proyecto.id)">
+                    <i class="bi bi-trash"></i> Eliminar
+                </button>
+            </div>
         </li>
     </ul>
 </div>
+

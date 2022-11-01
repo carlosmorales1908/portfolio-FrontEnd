@@ -7,9 +7,7 @@ import { persona } from 'src/app/model/persona.model';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
   @Input() persona!: persona;
-
   constructor() { }
 
   ngOnInit(): void {

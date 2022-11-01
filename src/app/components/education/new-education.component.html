@@ -1,0 +1,32 @@
+<div class="ppal">
+    <h3>Nueva Educación</h3>
+    <div class="container">
+        <div class="row">
+            <div>
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                    <div class="form-group">
+                        <label for="institucionEdu">Nombre de la institución:</label>
+                        <input type="text" class="form-control" id="institucionEdu" name="institucionEdu" [(ngModel)]="institucionEdu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nivelEdu">Nivel:</label>
+                        <input type="text" class="form-control" id="nivelEdu" name="nivelEdu" [(ngModel)]="nivelEdu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tituloEdu">Título:</label>
+                        <input type="text" class="form-control" id="tituloEdu" name="tituloEdu" [(ngModel)]="tituloEdu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="enCursoEdu"><input type="checkbox" id="enCursoEdu" name="enCursoEdu" [(ngModel)]="enCursoEdu" required> En curso</label>
+                    </div>
+                    <div class="form-group" *ngIf="!enCursoEdu">
+                        <label for="anioFinalizadoEdu">Año finalizado:</label>
+                        <input type="number" class="form-control" id="anioFinalizadoEdu" name="anioFinalizadoEdu" [(ngModel)]="anioFinalizadoEdu" required>
+                    </div>
+                    <button class="btn btn-warning btnAdd">Agregar educación</button>
+                </form>
+                <button class="btn btn-danger btnCancel" routerLink="/">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

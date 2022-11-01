@@ -1,15 +1,25 @@
 <h1>Educación</h1>
+<div class="newEduc">
+    <button type="button" class="btn btn-primary" routerLink="/nuevaEducacion" *ngIf="isLogged">Agregar Educación</button>
+</div>
 <div class="row">
-    
     <div class="col-lg-1"></div>    <!--agrego una columna vacia para que el div siguiente tenga una columna de margen -->
     <div class="col-lg-11">     <!--11 para que me ocupe 11 de las 12 columnas -->
         <ul>
-            <li *ngFor="let educacion of listaEstudios">
-                <h2>{{educacion.institucion}}</h2> 
-                <h4>Título: {{educacion.titulo}}</h4>
-                <p *ngIf="educacion.anioFinalizado"> - {{educacion.anioFinalizado}}</p>  
+            <li *ngFor="let educacion of educaciones">
+                <h2>{{educacion.titulo}}</h2>
+                <h4>{{educacion.institucion}}</h4>
+                <h5>Nivel: {{educacion.nivel}}</h5>
                 <p *ngIf="educacion.enCurso">Actualmente en curso</p>
-                <p *ngIf="educacion.finalizado">Finalizado</p>
+                <p *ngIf="!educacion.enCurso">Año finalizado: {{educacion.anioFinalizado}}</p>
+                <div class="opciones" *ngIf="isLogged">
+                    <button class="btn btn-warning btnEdit" routerLink="/editarEducacion/{{educacion.id}}">
+                        <i class="bi bi-pencil"></i> Editar
+                    </button>
+                    <button class="btn btn-danger" (click)="borrarEducacion(educacion.id)">
+                        <i class="bi bi-trash"></i> Eliminar
+                    </button>
+                </div>
             </li>
         </ul>
     </div>

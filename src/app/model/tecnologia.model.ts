@@ -3,11 +3,9 @@ export class tecnologia{
     nombre: string;
     meses: number;
 
-
     constructor(nombre:string, meses:number){
         this.nombre = nombre;
         this.meses = meses;
     }
 
-  
 }

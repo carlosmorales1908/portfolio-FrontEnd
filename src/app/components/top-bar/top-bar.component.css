@@ -2,10 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #252525;
 }
+
 .redes{
     margin-right: 0.5em;
 }
+
 .btn{
     border-width: medium;
     margin: 0.4em;
@@ -24,7 +27,6 @@ img{
     filter: invert(100%);
 }
 
-
 .btn:hover{
     color: orange;
     background-color:#252525;
@@ -35,6 +37,7 @@ img{
     position:absolute;
     right: 30%;
 }
+
 .nav-list a{ 
     font-size: 17px;
     font-weight: bold;
@@ -90,4 +93,13 @@ img{
     .redes img{
         margin: 0.2em;
     }
+
 }
+
+/*Pantallas muy pequeñas (móviles en portrait de menos de 576px)
+@media (max-width: 575.98px) {
+    .container{
+        display: none;
+    }
+ }
+ */
